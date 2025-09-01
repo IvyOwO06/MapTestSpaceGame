@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style/stylesheet.css" />
+        <title>Map</title>
+    </head>
+    <body>
+        <div id="planetFilter">
+            <div>
+                <input
+                    type="radio"
+                    name="planetFilter"
+                    id="securityStatus"
+                    value="securityStatus"
+                    checked
+                />
+                <label for="securityStatus">Security Status</label><br />
+            </div>
+            <div>
+                <input
+                    type="radio"
+                    name="planetFilter"
+                    id="SpectralClass"
+                    value="SpectralClass"
+                />
+                <label for="SpectralClass">Spectral class</label><br />
+            </div>
+            <div>
+                <input
+                    type="radio"
+                    name="planetFilter"
+                    id="spiceColor"
+                    value="spiceColor"
+                />
+                <label for="spiceColor">Spice Color</label><br />
+            </div>
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile">
+            <input type="text" name="system" id="systemSearch" placeholder="System search">
+            <button id="marking">Mark?</button>
+            <div class="markForm" hidden>
+                <label for="system_1">System 1:</label>
+                <input type="text" name="system_1">
+                <br>
+                <label for="system_2">System 2:</label>
+                <input type="text" name="system_2">
+                <br>
+                <label for="WHNo">Wormhole Number: </label>
+                <input type="number" name="WHNo" min="1" max="999">
+                <br>
+                <label for="type">Type: </label>
+                <select>
+                    <option value="transient">Transient</option>
+                    <option value="enduring">Enduring</option>
+                </select>
+                <br>
+                <input type="submit" name="submit">
+            </div>
+            <div id="planetInfo">
+            </div>
+        </div>
+        <canvas id="mapCanvas"></canvas>
+        <script src="js/test2.js"></script>
+        <script>
+            const button = document.getElementById("marking");
+            const form = document.querySelector(".markForm");
+          
+            button.addEventListener("click", () => {
+              form.hidden = !form.hidden;
+            });
+          </script>          
+    </body>
+</html>
